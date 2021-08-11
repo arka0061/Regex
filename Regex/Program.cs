@@ -14,13 +14,17 @@ namespace RegexValidation
             string lastName = Console.ReadLine();
             Console.WriteLine("Enter Email ID:");
             string email = Console.ReadLine();
-            if (validation.validateName(name) == true && validation.validateName(lastName) && validation.validateEmail(email))
+            Console.WriteLine("Enter Phone number:");           
+            string phno = Console.ReadLine();
+            if (validation.validateName(name) == true && validation.validateName(lastName) && validation.validateEmail(email) && validation.validatePhoneNumber(phno))
             {
                 Console.WriteLine("Username :" + name + " " + lastName);
                 Console.WriteLine("Email id :" + email);
+                Console.WriteLine("Phone Number is :" + phno);               
             }
             else
                 Console.WriteLine("Enter name in correct format!");
         }
     }
 }
+
