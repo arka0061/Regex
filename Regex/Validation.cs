@@ -10,6 +10,8 @@ namespace RegexValidation
         public string emailValidate = "^[a-z]{3,}([.][a-z]{3,})?[@][a-z]{2}[.][co]{2}([.][in]{2})?$";
         public string phoneValidate = "^[0-9]{2}[ ]{1}[0-9]{10}$";
         public string passwordRuleone = "[A-Za-z0-9]{8,}";
+        public string passwordRuleTwo = "[A-Z]{1,}";
+        public string passwordRuleThree = "[0-9]{1,}";
         public bool validateName(string name)
         {
             return Regex.IsMatch(name, nameValidate);
@@ -25,6 +27,14 @@ namespace RegexValidation
         public bool validatePassRuleOne(string password)
         {
             return Regex.IsMatch(password, passwordRuleone);
+        }
+        public bool validatePassRuleTwo(string password)
+        {
+            return Regex.IsMatch(password, passwordRuleTwo);
+        }
+        public bool validatePassRuleThree(string password)
+        {
+            return Regex.IsMatch(password, passwordRuleThree);
         }
     }
 }
