@@ -18,7 +18,9 @@ namespace RegexValidation
             string phno = Console.ReadLine();
             Console.WriteLine("Enter Password");
             string password = Console.ReadLine();
-            if (validation.validateName(name) == true && validation.validateName(lastName) && validation.validateEmail(email) && validation.validatePhoneNumber(phno) && validation.validatePassRuleOne(password))
+            if (validation.validateName(name) == true && validation.validateName(lastName) && validation.validateEmail(email) && validation.validatePhoneNumber(phno) 
+                && validation.validatePassRuleOne(password)
+                && validation.validatePassRuleTwo(password)&& validation.validatePassRuleThree(password))
             {
                 Console.WriteLine("Username :" + name + " " + lastName);
                 Console.WriteLine("Email id :" + email);
