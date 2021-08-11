@@ -9,7 +9,7 @@ namespace RegexValidation
         public string nameValidate = "^[A-Z]{1}[A-Za-z]{3,}$";
         public string emailValidate = "^[a-z]{3,}([.][a-z]{3,})?[@][a-z]{2}[.][co]{2}([.][in]{2})?$";
         public string phoneValidate = "^[0-9]{2}[ ]{1}[0-9]{10}$";
-        public string passwordRuleone = "[A-Za-z0-9]{8,}";
+        public string passwordRuleOne = "[A-Za-z0-9]{7,}[$&+,:;=?@#|'<>.^*()%!-]{1}";
         public string passwordRuleTwo = "[A-Z]{1,}";
         public string passwordRuleThree = "[0-9]{1,}";
         public bool validateName(string name)
