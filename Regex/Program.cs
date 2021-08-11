@@ -12,8 +12,13 @@ namespace RegexValidation
             string name = Console.ReadLine();
             Console.WriteLine("Enter Last Name :");
             string lastName = Console.ReadLine();
-            if (validation.validateName(name) == true && validation.validateName(lastName))
-                Console.WriteLine("Username :"+name+" "+lastName);
+            Console.WriteLine("Enter Email ID:");
+            string email = Console.ReadLine();
+            if (validation.validateName(name) == true && validation.validateName(lastName) && validation.validateEmail(email))
+            {
+                Console.WriteLine("Username :" + name + " " + lastName);
+                Console.WriteLine("Email id :" + email);
+            }
             else
                 Console.WriteLine("Enter name in correct format!");
         }
