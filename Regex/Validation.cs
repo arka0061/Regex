@@ -10,6 +10,6 @@ namespace RegexValidation
         public bool validateName(string name)
         {
             return Regex.IsMatch(name, nameValidate);
-        }
+        }     
     }
 }

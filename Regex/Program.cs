@@ -8,10 +8,12 @@ namespace RegexValidation
         {
             Console.WriteLine("Welcome to Regex Validation!");
             Validation validation = new Validation();
-            Console.WriteLine("Enter a Name :");
+            Console.WriteLine("Enter First Name :");
             string name = Console.ReadLine();
-            if (validation.validateName(name) == true)
-                Console.WriteLine("Username :"+name);
+            Console.WriteLine("Enter Last Name :");
+            string lastName = Console.ReadLine();
+            if (validation.validateName(name) == true && validation.validateName(lastName))
+                Console.WriteLine("Username :"+name+" "+lastName);
             else
                 Console.WriteLine("Enter name in correct format!");
         }
