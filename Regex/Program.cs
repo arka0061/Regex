@@ -7,6 +7,8 @@ namespace RegexValidation
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Regex Validation!");
+            SampleEmailValidation sample = new SampleEmailValidation();
+            sample.validateEmail();            
             Validation validation = new Validation();
             Console.WriteLine("Enter First Name :");
             string name = Console.ReadLine();
