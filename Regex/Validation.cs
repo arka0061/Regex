@@ -12,27 +12,27 @@ namespace RegexValidation
         public const string PASSWORD_RULE_ONE = "[A-Za-z0-9]{7,}[$&+,:;=?@#|'<>.^*()%!-]{1}";
         public const string PASSWROD_RULE_TWO = "[A-Z]{1,}";
         public const string PASSWORD_RULE_THREE = "[0-9]{1,}";
-        public bool validateName(string name)
+        public bool ValidateName(string name)
         {
             return Regex.IsMatch(name, NAME_VALIDATE);
         }
-        public bool validateEmail(string email)
+        public bool ValidateEmail(string email)
         {
             return Regex.IsMatch(email, EMAIL_VALIDATE);
         }
-        public bool validatePhoneNumber(string phone)
+        public bool ValidatePhoneNumber(string phone)
         {
             return Regex.IsMatch(phone, PHONE_VALIDATE);
         }
-        public bool validatePassRuleOne(string password)
+        public bool ValidatePassRuleOne(string password)
         {
             return Regex.IsMatch(password, PASSWORD_RULE_ONE);
         }
-        public bool validatePassRuleTwo(string password)
+        public bool ValidatePassRuleTwo(string password)
         {
             return Regex.IsMatch(password, PASSWROD_RULE_TWO);
         }
-        public bool validatePassRuleThree(string password)
+        public bool ValidatePassRuleThree(string password)
         {
             return Regex.IsMatch(password, PASSWORD_RULE_THREE);
         }
