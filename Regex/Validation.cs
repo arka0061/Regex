@@ -73,10 +73,7 @@ namespace RegexValidation
             Regex regex2 = new Regex(PASSWROD_RULE_TWO);
             bool check2 = regex2.IsMatch(password);
             Regex regex3 = new Regex(PASSWORD_RULE_ONE);
-            bool check3= regex3.IsMatch(password);
-            Console.WriteLine(check1);
-            Console.WriteLine(check2);
-            Console.WriteLine(check3);
+            bool check3= regex3.IsMatch(password);         
             if (check1.Equals(true) & check2.Equals(true) & check3.Equals(true))
             {
                 return "Happy";

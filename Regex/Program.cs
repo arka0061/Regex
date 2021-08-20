@@ -11,46 +11,62 @@ namespace RegexValidation
             sample.validateEmail();
             Validation validation = new Validation();
             Console.WriteLine("Enter First Name :");
-            string name = validation.ValidateName(Console.ReadLine());
-            if (name.Equals("Happy"))
-                Console.WriteLine("Enter Last Name :");
-            else
+            try
             {
-                Console.WriteLine("InCorrect Input!");
-                return;
+                string name = validation.ValidateName(Console.ReadLine());
+                if (name.Equals("Sad"))
+                    throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_FIRSTNAME, "Invalid FirstName");
             }
-            string lastName = validation.ValidateName(Console.ReadLine());
-            if (lastName.Equals("Happy"))
-                Console.WriteLine("Enter Email ID:");
-            else
+            catch (CustomExceptions ex)
             {
-                Console.WriteLine("InCorrect Input!");
-                return;
+                throw ex;
+
             }
-            string email = validation.ValidateEmail(Console.ReadLine());
-            if (email.Equals("Happy"))
-                Console.WriteLine("Enter Phone number:");
-            else
+            Console.WriteLine("Enter Last Name :");
+            try
             {
-                Console.WriteLine("InCorrect Input!");
-                return;
+                string lastName = validation.ValidateName(Console.ReadLine());
+                if (lastName.Equals("Sad"))
+                    throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_LASTNAME, "Invalid LastName");
             }
-            string phno = validation.ValidatePhoneNumber(Console.ReadLine());
-            if (phno.Equals("Happy"))
-                Console.WriteLine("Enter Password");
-            else
+            catch (CustomExceptions ex)
             {
-                Console.WriteLine("InCorrect Input!");
-                return;
+                throw ex;
             }
-            string password = validation.ValidatePassword(Console.ReadLine());
-            if (password.Equals("Happy"))
+            Console.WriteLine("Enter Email ID:");
+            try
             {
-                Console.WriteLine("User Registered Sucessfully!");
+                string email = validation.ValidateEmail(Console.ReadLine());
+                if (email.Equals("Sad"))
+                    throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_EMAIL, "Invalid EmailAddress");
             }
-            else
-                Console.WriteLine("InCorrect Input!");
+            catch (CustomExceptions ex)
+            {
+                throw ex;
+            }
+            Console.WriteLine("Enter Phone number:");
+            try
+            {
+                string phno = validation.ValidatePhoneNumber(Console.ReadLine());
+                if (phno.Equals("Sad"))
+                    throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_PHNO, "Invalid Phone Number");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            Console.WriteLine("Enter Password");
+            try
+            {
+                string password = validation.ValidatePassword(Console.ReadLine());
+                if (password.Equals("Sad"))
+                    throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_PASSWORD, "Invalid Password");
+            }
+            catch (CustomExceptions ex)
+            {
+                throw ex;
+            }
+            Console.Write("User Registered Sucessfully!");
         }
     }
-
 }
