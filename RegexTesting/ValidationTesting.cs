@@ -123,5 +123,26 @@ namespace RegexTesting
             string expected = user.ValidatePassRuleThree("Abcdfgh");
             Assert.AreEqual(actual, expected);
         }
+        [Test]
+        [TestCase("abc@bl.co.in")]
+        [TestCase("abc.xyz@bl.co")]
+        [TestCase("aabc.xyz@bl.co.in")]
+        public void GivenMultipleValidEmailId_WhenAnalyze_ShouldReturnHappy(string mailid)
+        {
+            string actual = "Happy";
+            Validation user = new Validation();
+            string expected = user.ValidateEmail(mailid);
+            Assert.AreEqual(actual, expected);
+        }
+        [Test]
+        [TestCase("bl.in")]
+        [TestCase(".xyz@bl..co")]
+        public void GivenMultipleInValidEmailId_WhenAnalyze_ShouldReturnSad(string mailid)
+        {
+            string actual = "Sad";
+            Validation user = new Validation();
+            string expected = user.ValidateEmail(mailid);
+            Assert.AreEqual(actual, expected);
+        }
     }
 }

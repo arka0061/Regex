@@ -24,7 +24,7 @@ namespace RegexValidation
         public string ValidateEmail(string email)
         {
             Regex regex = new Regex(EMAIL_VALIDATE);
-            bool check = regex.IsMatch(email);          
+            bool check = regex.IsMatch(email);
             if (check == true)
                 return "Happy";
             else
@@ -65,6 +65,21 @@ namespace RegexValidation
                 return "Happy";
             else
                 return "Sad";
+        }
+        public string ValidateMultipleEmail(string email)
+        {
+            Regex regex = new Regex(PASSWORD_RULE_ONE);
+            Regex regex1 = new Regex(PASSWROD_RULE_TWO);
+            Regex regex2 = new Regex(PASSWORD_RULE_THREE);
+            if (regex.IsMatch(email) & regex1.IsMatch(email) & regex2.IsMatch(email))
+            {
+                return "Happy";
+            }
+            else
+            {
+                return "False";
+            }
+
         }
     }
 }
