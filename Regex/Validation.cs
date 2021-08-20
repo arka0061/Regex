@@ -11,7 +11,7 @@ namespace RegexValidation
         public const string PHONE_VALIDATE = "^[0-9]{2}[ ]{1}[0-9]{10}$";
         public const string PASSWORD_RULE_ONE = "[A-Za-z0-9]{7,}[$&+,:;=?@#|'<>.^*()%!-]{1}";
         public const string PASSWROD_RULE_TWO = "[A-Z]{1,}";
-        public const string PASSWORD_RULE_THREE = "[0-9]{1,}";
+        public const string PASSWORD_RULE_THREE = "[0-9]{1,}";   
         public string ValidateName(string name)
         {
             Regex regex = new Regex(NAME_VALIDATE);
@@ -66,21 +66,27 @@ namespace RegexValidation
             else
                 return "Sad";
         }
-        public string ValidateMultipleEmail(string email)
+        public string ValidatePassword(string password)
         {
-            Regex regex = new Regex(PASSWORD_RULE_ONE);
-            Regex regex1 = new Regex(PASSWROD_RULE_TWO);
-            Regex regex2 = new Regex(PASSWORD_RULE_THREE);
-            if (regex.IsMatch(email) & regex1.IsMatch(email) & regex2.IsMatch(email))
+            Regex regex1= new Regex(PASSWORD_RULE_THREE);
+            bool check1 = regex1.IsMatch(password);
+            Regex regex2 = new Regex(PASSWROD_RULE_TWO);
+            bool check2 = regex2.IsMatch(password);
+            Regex regex3 = new Regex(PASSWORD_RULE_ONE);
+            bool check3= regex3.IsMatch(password);
+            Console.WriteLine(check1);
+            Console.WriteLine(check2);
+            Console.WriteLine(check3);
+            if (check1.Equals(true) & check2.Equals(true) & check3.Equals(true))
             {
                 return "Happy";
             }
             else
             {
-                return "False";
+                return "Sad";
             }
-
         }
+       
     }
 }
 
